@@ -1,10 +1,16 @@
+"use client"
+
+import './Links.css'
 import Link from 'next/link';
 
+import { usePathname } from "next/navigation";
+
 function Links () {
+    const pathName = usePathname();
     let links = [
         {
             title: "Homepage",
-            path: '/'
+            path: '/',
         },
         {
             title: "About",
@@ -16,15 +22,20 @@ function Links () {
         },
         {
             title: "Blog",
-            path: '/posts'
+            path: '/blog'
         },
     ]
     return(
         <>
-            <div>
+            <div className='navbar__link'>
                 {links.map( (link) => {
                     return(
-                        <Link href={link.path} key={link.title}>{link.title}</Link>
+                        <Link
+                            href={link.path}
+                            key={link.title}
+                            className={pathName === link.path ? 'link-container active' : 'link-container'}>
+                                {link.title}
+                        </Link>
                     )
                 })}
             </div>

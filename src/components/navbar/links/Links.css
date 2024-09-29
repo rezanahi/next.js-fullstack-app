@@ -3,3 +3,16 @@
     align-items: center;
     gap: 10px;
 }
+
+.active{
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+.link-container{
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    text-align: center;
+}
