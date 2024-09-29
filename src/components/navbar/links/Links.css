@@ -22,3 +22,33 @@
     cursor: pointer;
     font-weight: bold;
 }
+
+.mobile-links{
+    position: absolute;
+    top: 100px;
+    right: 0;
+    width: 50%;
+    height: calc(100vh - 100px);
+    background-color: var(--bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.mobile-menu-btn{
+    display: none;
+}
+
+
+@media (width <= 768px) {
+    .mobile-menu-btn{
+        display: block;
+    }
+    .navbar__link{
+        display: none;
+    }
+}

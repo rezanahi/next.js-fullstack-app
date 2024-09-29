@@ -4,6 +4,7 @@ import './Links.css'
 import Link from 'next/link';
 
 import { usePathname } from "next/navigation";
+import {useState} from "react";
 
 function Links () {
     const pathName = usePathname();
@@ -29,6 +30,9 @@ function Links () {
     const isAdmin = true
     const session = true
 
+
+    //STATES
+    const [open, setOpen] = useState(false);
     return(
         <>
             <div className='navbar__link'>
@@ -57,6 +61,21 @@ function Links () {
                     <Link href={'/login'}>Login</Link>
                 )}
             </div>
+            <button className='mobile-menu-btn' onClick={() => setOpen((prev) => !prev)}>Menu</button>
+            {
+                open && (
+                    <div className='mobile-links'>
+                        {links.map((link) => (
+                            <Link
+                                href={link.path}
+                                key={link.title}
+                                className={pathName === link.path ? 'link-container active' : 'link-container'}>
+                                {link.title}
+                            </Link>
+                        ))}
+                    </div>
+                )
+            }
         </>
     )
 }
