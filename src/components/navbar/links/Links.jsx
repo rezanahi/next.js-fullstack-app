@@ -25,6 +25,10 @@ function Links () {
             path: '/blog'
         },
     ]
+    //TEMP
+    const isAdmin = true
+    const session = true
+
     return(
         <>
             <div className='navbar__link'>
@@ -38,6 +42,20 @@ function Links () {
                         </Link>
                     )
                 })}
+                {session ? (
+                    <>
+                        {
+                            isAdmin && (
+                                <Link
+                                    className={pathName === '/admin' ? 'link-container active' : 'link-container'}
+                                    href={'/admin'}>Admin</Link>
+                            )
+                        }
+                        <button className='link--logout'>Logout</button>
+                    </>
+                ) : (
+                    <Link href={'/login'}>Login</Link>
+                )}
             </div>
         </>
     )
