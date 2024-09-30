@@ -51,6 +51,36 @@ a {
   justify-content: space-between;
 }
 
+@media (width <= 1280px) {
+  .container{
+    width: 1024px;
+  }
+}
+
+@media (width <= 1024px) {
+  .container{
+    width: 768px;
+  }
+}
+
+@media (width <= 768px) {
+  .container{
+    width: 640px;
+  }
+}
+
+@media (width <= 640px) {
+  .container{
+    width: 475px;
+  }
+}
+
+@media (width <= 475px) {
+  .container{
+    width: 96%;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

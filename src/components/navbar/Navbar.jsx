@@ -1,6 +1,6 @@
 import './Navbar.css'
 import Links from "./Links/Links";
-
+import Link from 'next/link'
 
 function Navbar () {
 
@@ -9,7 +9,7 @@ function Navbar () {
     return(
         <>
             <div className='navbar'>
-                <div className='navbar__logo'>Logo</div>
+                <Link href='/' className='navbar__logo'>Logo</Link>
                 <div className='navbar__links'>
                     <Links></Links>
                 </div>
