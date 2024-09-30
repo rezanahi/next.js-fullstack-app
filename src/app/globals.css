@@ -43,6 +43,7 @@ a {
 .container{
   /*background-color: rebeccapurple;*/
   width: 1236px;
+  height: 100%;
   margin: 0 auto;
   padding: 0 50px;
   min-height: 100vh;
