@@ -1,8 +1,15 @@
+import './page.module.css'
+import '@/components/postCard/PostCard'
+import PostCard from "@/components/postCard/PostCard";
+
 function Blog () {
 
     return (
         <>
-            <p>Blog</p>
+            <PostCard></PostCard>
+            <PostCard></PostCard>
+            <PostCard></PostCard>
+            <PostCard></PostCard>
         </>
     )
 }
