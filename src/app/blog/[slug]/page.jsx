@@ -13,7 +13,9 @@ function Post () {
                 <div className={styles.textContainer}>
                     <h1 className={styles.title}>Title</h1>
                     <div className={styles.detail}>
-                        <Image src={'/post3.jpg'} alt='' className={styles.avatar} fill/>
+                        <div className={styles.avatarWrapper}>
+                            <Image src={'/post3.jpg'} alt='' className={styles.avatar} fill/>
+                        </div>
                         <div className={styles.detailText}>
                             <span className={styles.detailTitle}>Author</span>
                             <span className={styles.detailValue}>Terry Jefferson</span>
