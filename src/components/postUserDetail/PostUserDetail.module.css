@@ -1,0 +1,21 @@
+.avatarWrapper{
+    width: 56px;
+    height: 56px;
+    position: relative;
+    border-radius: 100%;
+    overflow: hidden;
+}
+/*.avatar*/
+.detailText{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+}
+.detailTitle{
+    color: gray;
+    font-weight: bold;
+}
+.detailValue{
+    font-weight: 500;
+}

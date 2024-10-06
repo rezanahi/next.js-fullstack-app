@@ -24,13 +24,6 @@
     flex-direction: row;
     gap: 24px;
 }
-.avatarWrapper{
-    width: 56px;
-    aspect-ratio: 1;
-    position: relative;
-    border-radius: 100%;
-    overflow: hidden;
-}
 /*.avatar*/
 .detailText{
     display: flex;

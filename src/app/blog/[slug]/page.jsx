@@ -1,6 +1,8 @@
 import styles from './singlePost.module.css'
 import Image from "next/image";
 
+import PostUserDetail from "@/components/postUserDetail/PostUserDetail";
+
 function Post () {
 
 
@@ -13,13 +15,7 @@ function Post () {
                 <div className={styles.textContainer}>
                     <h1 className={styles.title}>Title</h1>
                     <div className={styles.detail}>
-                        <div className={styles.avatarWrapper}>
-                            <Image src={'/post3.jpg'} alt='' className={styles.avatar} fill/>
-                        </div>
-                        <div className={styles.detailText}>
-                            <span className={styles.detailTitle}>Author</span>
-                            <span className={styles.detailValue}>Terry Jefferson</span>
-                        </div>
+                        <PostUserDetail></PostUserDetail>
                         <div className={styles.detailText}>
                             <span className={styles.detailTitle}>Published</span>
                             <span className={styles.detailValue}>01.01.2024</span>
