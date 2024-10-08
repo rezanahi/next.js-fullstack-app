@@ -1,11 +1,10 @@
+'use client'
 import styles from './singlePost.module.css'
 import Image from "next/image";
 
 import PostUserDetail from "@/components/postUserDetail/PostUserDetail";
 
 function Post () {
-
-
     return (
         <>
             <div className={styles.container}>
@@ -13,7 +12,7 @@ function Post () {
                     <Image src={'/post2.jpg'} alt='' className={styles.img} fill />
                 </div>
                 <div className={styles.textContainer}>
-                    <h1 className={styles.title}>Title</h1>
+                    <h1 className={styles.title}>title</h1>
                     <div className={styles.detail}>
                         <PostUserDetail></PostUserDetail>
                         <div className={styles.detailText}>
@@ -22,7 +21,7 @@ function Post () {
                         </div>
                     </div>
                     <div className={styles.content}>
-                        lotrem lorem lorem lorem
+                        body
                     </div>
                 </div>
             </div>
