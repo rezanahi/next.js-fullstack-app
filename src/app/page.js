@@ -1,4 +1,6 @@
 // import Image from "next/image";
+import dotenv from 'dotenv';
+dotenv.config()
 import styles from "./page.module.css";
 import Image from "next/image";
 
