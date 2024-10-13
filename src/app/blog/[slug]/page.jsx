@@ -1,10 +1,24 @@
 'use client'
 import styles from './singlePost.module.css'
 import Image from "next/image";
+import { useSearchParams } from 'next/navigation'
 
 import PostUserDetail from "@/components/postUserDetail/PostUserDetail";
 
+import {getPost} from "../../../../lib/data";
+import {useEffect, useState} from "react";
+
 function Post () {
+    const searchParams = useSearchParams()
+    const slug = searchParams.get('slug')
+    const [post, setPost] = useState();
+
+    useEffect(() => {
+        getPost(slug).then(res => {
+            setPost(res)
+        })
+    }, [slug]);
+
     return (
         <>
             <div className={styles.container}>
@@ -12,7 +26,7 @@ function Post () {
                     <Image src={'/post2.jpg'} alt='' className={styles.img} fill />
                 </div>
                 <div className={styles.textContainer}>
-                    <h1 className={styles.title}>title</h1>
+                    <h1 className={styles.title}>{post}</h1>
                     <div className={styles.detail}>
                         <PostUserDetail></PostUserDetail>
                         <div className={styles.detailText}>
