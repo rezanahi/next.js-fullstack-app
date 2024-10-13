@@ -10,7 +10,7 @@ function PostCard({postData}) {
             <div className={styles.container}>
                 <div className={styles.top}>
                     <div className={styles.imgContainer}>
-                        <Image src={postData.img ? postData.img : '/post1.jpg'} alt='' fill className={styles.img}/>
+                        <Image unoptimized src={postData.img ? postData.img : '/post1.jpg'} alt='' fill className={styles.img}/>
                     </div>
                     <span className={styles.date}>01.01.2024</span>
                 </div>
