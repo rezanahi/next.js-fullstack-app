@@ -20,4 +20,15 @@ model Users {
   password String
   avatar String?
   isAdmin Boolean? @default(false)
+  posts Posts[] @relation(name: "post-author")
+}
+
+model Posts {
+  id Int @id @default(autoincrement())
+  title String
+  description String
+  slug String @unique
+  image String?
+  author Users @relation(name: "post-author" ,fields: [authorId], references: [id])
+  authorId Int
 }
