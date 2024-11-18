@@ -31,4 +31,6 @@ model Posts {
   image String?
   author Users @relation(name: "post-author" ,fields: [authorId], references: [id])
   authorId Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }

@@ -1,8 +1,10 @@
 import styles from './PostUserDetail.module.css'
 import Image from "next/image";
 
-function PostUserDetail() {
+import {getUser} from '../../../lib/data'
 
+async function PostUserDetail({authorId}) {
+    const author = await getUser(authorId)
 
     return(
         <>
@@ -11,7 +13,7 @@ function PostUserDetail() {
             </div>
             <div className={styles.detailText}>
                 <span className={styles.detailTitle}>Author</span>
-                <span className={styles.detailValue}>Terry Jefferson</span>
+                <span className={styles.detailValue}>{author.username}</span>
             </div>
         </>
     )
