@@ -12,7 +12,7 @@ function PostCard({postData}) {
                     <div className={styles.imgContainer}>
                         <Image unoptimized src={postData.image ? postData.image : '/post1.jpg'} alt='' fill className={styles.img}/>
                     </div>
-                    <span className={styles.date}>01.01.2024</span>
+                    <span className={styles.date}>{postData.createdAt.toString().slice(4, 15)}</span>
                 </div>
                 <div className={styles.bottom}>
                     <h1 className={styles.title}>{postData.title}</h1>
