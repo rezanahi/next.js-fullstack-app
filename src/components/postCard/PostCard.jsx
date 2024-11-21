@@ -18,6 +18,7 @@ function PostCard({postData}) {
                     <h1 className={styles.title}>{postData.title}</h1>
                     <p className={styles.desc}>{postData.description}</p>
                     <Link className={styles.link} href={`/blog/${postData.slug}`}>Read More</Link>
+
                 </div>
             </div>
         </>
