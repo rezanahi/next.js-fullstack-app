@@ -5,6 +5,15 @@ import PostUserDetail from "@/components/postUserDetail/PostUserDetail";
 
 import {getPost} from "../../../../lib/data";
 
+export const generateMetadata = async ({params}) => {
+    const {slug} = await params
+    const post = await getPost(slug)
+    return {
+        title: post.title,
+        description: post.description,
+    }
+}
+
 async function Post ({params}) {
     const {slug} = await params
     const post = await getPost(slug)
