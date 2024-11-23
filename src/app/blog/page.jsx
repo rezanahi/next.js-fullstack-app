@@ -5,8 +5,7 @@ import styles from './blog.module.css'
 import {getPosts} from '../../../lib/data'
 
 export const metadata = {
-    title: "Blog",
-    description: "Blog Blog Blog",
+    title:'Blog',
 };
 
 async function Blog () {

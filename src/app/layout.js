@@ -2,6 +2,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from '@/components/navbar/Navbar'
 import Footer from '@/components/footer/Footer'
+import {getPost} from "../../lib/data";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,13 +15,14 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: {
-    default: 'Lama',
-    template: '%s | Lama'
-  },
-  description: "%s",
-};
+export const generateMetadata = async () => {
+  return {
+    title: {
+      template: '%s | Lama',
+      default: 'Lama',
+    }
+  }
+}
 
 export default function RootLayout({ children }) {
   return (
