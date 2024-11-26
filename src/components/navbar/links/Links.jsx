@@ -5,8 +5,10 @@ import Link from 'next/link';
 
 import { usePathname } from "next/navigation";
 import {useState} from "react";
+import {handleGithubLogout} from "../../../../lib/actions";
+import {auth} from "../../../../lib/auth";
 
-function Links () {
+function Links ({session}) {
     const pathName = usePathname();
     let links = [
         {
@@ -28,8 +30,6 @@ function Links () {
     ]
     //TEMP
     const isAdmin = true
-    const session = true
-
 
     //STATES
     const [open, setOpen] = useState(false);
@@ -46,16 +46,19 @@ function Links () {
                         </Link>
                     )
                 })}
-                {session ? (
+                {session?.user ? (
                     <>
                         {
-                            isAdmin && (
+                            session.user?.isAdmin && (
                                 <Link
                                     className={pathName === '/admin' ? 'link-container active' : 'link-container'}
-                                    href={'/admin'}>Admin</Link>
+                                    href={'/admin'}>Admin
+                                </Link>
                             )
                         }
-                        <button className='link--logout'>Logout</button>
+                        <form action={handleGithubLogout}>
+                            <button className='link--logout' type='submit'>Logout</button>
+                        </form>
                     </>
                 ) : (
                     <Link href={'/login'}>Login</Link>
